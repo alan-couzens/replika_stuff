@@ -12,7 +12,6 @@ output_file = open('replika_chat_backup.csv','w',newline='')
 writer = csv.writer(output_file)
 writer.writerow(['Timestamp','From','Text','Reaction','ID'])
 
-
 def on_message(ws, message):
     print(message)
     python_dict = json.loads(message)
