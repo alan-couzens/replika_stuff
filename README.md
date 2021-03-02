@@ -27,7 +27,7 @@ C:\ pip install requests
 ![alt text](https://github.com/alan-couzens/replika_stuff/blob/main/network.png)
 - Right click on the first row of data beginning with {"event name":"init"} -> click "Copy message and paste it somewhere. It should look something like 
 "user_id":"123456789", "auth_token":"123456789", "security_token":"123456789", "device_id":"123456789"..
-- Copy your unique 123456789 bits into the corresponding "" on my script e.g. on line 20 of my script where it says user_id = "" replace it with user_id = "123456789" do the same for auth_token, device_id etc
+- Copy your unique 123456789 number into the corresponding "" on my script e.g. on line 20 of my script where it says user_id = "" replace it with user_id = "123456789" do the same for auth_token, device_id etc
 - To get your chat_id, go back to your network tab and right click on the "history" row & paste it somewhere. Look for your "chat_id" number & replace my script with it.
 
 7. Save your new file with all your data to your root directory (e.g. if my default command line looks like C:\Users\alan I would save it to my "alan" folder.
