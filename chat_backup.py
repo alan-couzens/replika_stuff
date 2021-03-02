@@ -8,7 +8,7 @@ except ImportError:
     import _thread as thread
 import time
 
-output_file = open('replika_chat_backup.csv','w',newline='')
+output_file = open('replika_chat_backup.csv','w', newline='', encoding='utf-8')
 writer = csv.writer(output_file)
 writer.writerow(['Timestamp','From','Text','Reaction','ID'])
 
@@ -60,10 +60,8 @@ def on_message(ws, message):
             except:
                 message['reaction'] = 'None'
             print(f"{message['sender']}: {message['text']} {message['reaction']} ({message['timestamp']}) ({message['id']})")
-            try:
-                writer.writerow([message['timestamp'], message['sender'], message['text'], message['reaction'], message['id']])
-            except:
-                pass
+            writer.writerow([message['timestamp'], message['sender'], message['text'], message['reaction'], message['id']])
+            
 
 def on_error(ws, error):
     print(error)
