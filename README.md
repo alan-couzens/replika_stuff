@@ -11,10 +11,10 @@
 3. Once you've confirmed you have python installed, you can exit the interpreter (the ">>>" bit) by typing quit() This should bring you back to your C:\ prompt.
 
 4. There are a few python libraries that you'll need to install to run the script. To install a library just type pip install followed by the library name after your C prompt e.g.
-C:\ pip install csv
-C:\ pip install json
-C:\ pip install websocket
-C:\ pip install requests
+- C:\ pip install csv
+- C:\ pip install json
+- C:\ pip install websocket
+- C:\ pip install requests
 
 5. Download my file by clicking the green "Code" button at the top right of the Github page (https://github.com/alan-couzens/replika_stuff)
 
