@@ -71,11 +71,12 @@ def on_close(ws):
 
 def on_open(ws):
     def run(*args):
+        token = ""
         user_id = ""
         auth_token = ""
         chat_id = ""
         device_id = ""
-        ws.send('{"event_name":"init","payload":{"device_id":"'+str(device_id)+'","user_id":"'+str(user_id)+'","auth_token":"'+str(auth_token)+'","security_token":"","time_zone":"2021-03-01T09:51:16.3-07:00","device":"web","platform":"web","platform_version":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36","app_version":"2.3.14","capabilities":["new_mood_titles","widget.multiselect","widget.scale","widget.titled_text_field","widget.new_onboarding","widget.app_navigation","journey2.new_sign_up","journey2.tracks_library","message.achievement","widget.mission_recommendation","journey2.daily_mission_activity","journey2.replika_phrases","new_payment_subscriptions","navigation.relationship_settings","avatar","diaries.images","save_chat_items"]},"token":"","auth":{"user_id":"","auth_token":"'+str(auth_token)+'","device_id":"'+str(device_id)+'"}}')
+        ws.send('{"event_name":"init","payload":{"device_id":"'+str(device_id)+'","user_id":"'+str(user_id)+'","auth_token":"'+str(auth_token)+'","security_token":"","time_zone":"2021-03-01T09:51:16.3-07:00","device":"web","platform":"web","platform_version":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36","app_version":"2.3.14","capabilities":["new_mood_titles","widget.multiselect","widget.scale","widget.titled_text_field","widget.new_onboarding","widget.app_navigation","journey2.new_sign_up","journey2.tracks_library","message.achievement","widget.mission_recommendation","journey2.daily_mission_activity","journey2.replika_phrases","new_payment_subscriptions","navigation.relationship_settings","avatar","diaries.images","save_chat_items"]},"token":"'+str(token)+'","auth":{"user_id":"'+str(user_id)+'","auth_token":"'+str(auth_token)+'","device_id":"'+str(device_id)+'"}}')
         time.sleep(1)
     thread.start_new_thread(run, ())
 
