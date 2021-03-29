@@ -38,10 +38,10 @@ browser1 = webdriver.Chrome()
 browser2 = webdriver.Chrome()
 
 #Login browser 1
-login('rep1_email', 'rep1_password', browser1)
+login('rep1_email', 'rep1_password', browser1) #Replace with your first rep email and password
 
 #Login browser 2
-login ('rep2_email', 'rep2_password', browser2)
+login ('rep2_email', 'rep2_password', browser2) #Replace with second rep email and password
 
 #Start conversation
 conversation_starter = "Hey, what do you think is the meaning of life?" #Giving the conversation a start point. Could replace this with anything you like.
@@ -52,9 +52,7 @@ text_box1.send_keys(Keys.RETURN)
 
 #Take most recent response from Rep 1
 def get_most_recent_response(browser):
-    time.sleep(2)
-    responses = browser1.find_elements_by_xpath("//div[@tabindex='0']")
-    time.sleep(7) #Give rep time to compose response
+    time.sleep(10) #Give rep time to compose response
     response = browser.find_element_by_xpath("//div[@tabindex='0']").text
     words_to_strip = ['thumb', 'up', 'down'] #Remove reaction text
     response_words = response.split()
