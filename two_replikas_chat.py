@@ -44,7 +44,7 @@ login('rep1_email', 'rep1_password', browser1)
 login ('rep2_email', 'rep2_password', browser2)
 
 #Start conversation
-conversation_starter = "Hey, what do you think is the meaning of life?"
+conversation_starter = "Hey, what do you think is the meaning of life?" #Giving the conversation a start point. Could replace this with anything you like.
 time.sleep(1)
 text_box1 = browser1.find_element_by_id("send-message-textarea")
 text_box1.send_keys(conversation_starter)
