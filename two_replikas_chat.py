@@ -58,6 +58,10 @@ def get_most_recent_response(browser):
     response_words = response.split()
     response_words_edited = [word for word in response_words if word not in words_to_strip]
     response = ' '.join(response_words_edited)
+    stop_words = ['hug','nuzzle','snuggle']
+        for stop_word in stop_words:
+            if stop_word in response:
+                response = "Let's talk about something else"
     print(f"Edited response: {response}")
     return response
 
