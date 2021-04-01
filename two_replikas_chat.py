@@ -60,7 +60,7 @@ def get_most_recent_response(browser):
     response = ' '.join(response_words_edited)
     stop_words = ['hug','nuzzle','snuggle']
         for stop_word in stop_words:
-            if stop_word in response:
+            if stop_word in response_words_edited:
                 response = "Let's talk about something else"
     print(f"Edited response: {response}")
     return response
