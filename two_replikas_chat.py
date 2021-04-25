@@ -2,12 +2,11 @@
 
 #Import libraries
 import time
-from emoji import UNICODE_EMOJI
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-# Mod: Account-Data
 user1=""
 password1=""
 user2=""
@@ -32,14 +31,7 @@ def login(email, password, browser):
     except:
         pass
 
-#remove emojis from string (chromedriver can't process)
-def remove_emojis(text_string):
-    emojiless_text_string = ""
-    for character in text_string:
-        if character in UNICODE_EMOJI:
-            character = ' '
-        emojiless_text_string = emojiless_text_string + character
-    return emojiless_text_string
+
 
 #Instantiate browser 1 and 2
 browser1 = webdriver.Chrome()
@@ -100,8 +92,13 @@ def get_most_recent_response(browser):
 #Insert start text in rep 2
 def type_most_recent_response(browser, response):
     text_box = browser.find_element_by_id("send-message-textarea")
-    response = remove_emojis(response) #Remove emojis if using Chrome (Chromedriver can't process)
-    text_box.send_keys(response)
+
+    # Mod: Workaround for emoji problem
+    script="var elm = arguments[0],txt=arguments[1];elm.value += txt;"
+    browser.execute_script(script, text_box, response)
+
+    # Mod: neccessary else send_keys throws an error
+    text_box.send_keys(" ")
     text_box.send_keys(Keys.RETURN)
 
 #Converse back and forth (x100)
